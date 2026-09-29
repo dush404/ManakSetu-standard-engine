@@ -27,14 +27,14 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       <Sidebar />
       <div className="flex min-h-screen flex-col md:pl-56">
         <TopBar />
-        <main className="flex-1 px-4 pb-4 pt-4 md:px-6 md:pb-6">{children}</main>
-        <footer
-          className="no-print mb-[calc(3.5rem+env(safe-area-inset-bottom))] mt-auto flex min-h-10 items-center justify-between border-t border-border bg-white px-4 text-[11px] text-muted-foreground md:mb-0 md:px-6"
-        >
+        <main className="flex-1 px-4 pb-4 pt-4 md:px-6 md:pb-6">
+          {children}
+        </main>
+        <footer className="no-print mb-[calc(3.5rem+env(safe-area-inset-bottom))] mt-auto flex min-h-10 items-center justify-between border-t border-border bg-white px-4 text-[11px] text-muted-foreground md:mb-0 md:px-6">
           <span className="min-w-0 truncate">
-            <span className="sm:hidden">© 2025 BIS-Graph</span>
+            <span className="sm:hidden">© 2025 MANAKSETU</span>
             <span className="hidden sm:inline">
-              © 2025 BIS-Graph · Bureau of Indian Standards alignment engine
+              © 2025 MANAKSETU · Bureau of Indian Standards alignment engine
             </span>
           </span>
           <span className="hidden shrink-0 sm:inline tabular-nums">

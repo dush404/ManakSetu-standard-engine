@@ -1,5 +1,5 @@
 // ─────────────────────────────────────────────────────────────
-// BIS-Graph — audit report builder (deterministic mock reports)
+// MANAKSETU — audit report builder (deterministic mock reports)
 // ─────────────────────────────────────────────────────────────
 
 import { findAudit, findStandard } from "./mock-data";
@@ -31,23 +31,61 @@ function steelReport(id: string): AuditReport {
         id: "specs",
         heading: "Recommended Specifications",
         body: [
-          { text: "The following parameter set should appear in the technical schedule. Values are extracted from IS 1786:2008 (Fifth Revision, incl. Amd 4) and the design code chain." },
+          {
+            text: "The following parameter set should appear in the technical schedule. Values are extracted from IS 1786:2008 (Fifth Revision, incl. Amd 4) and the design code chain.",
+          },
         ],
         specRows: [
-          { parameter: "Grade designation", required: "Fe500D", reference: "IS 1786, Table 1" },
-          { parameter: "0.2% proof stress", required: "≥ 500 N/mm²", reference: "IS 1608:2008" },
-          { parameter: "Tensile strength", required: "≥ 565 N/mm²", reference: "IS 1608:2008" },
-          { parameter: "Elongation A5", required: "≥ 14.5%", reference: "IS 1786, Table 3" },
-          { parameter: "Sulphur / Phosphorus", required: "≤ 0.040% each", reference: "IS 228:1993" },
-          { parameter: "Carbon equivalent", required: "≤ 0.42%", reference: "Amd 4, Nov 2023" },
-          { parameter: "Bend / re-bend", required: "Mandrel 3d / 7d", reference: "IS 1599:1985" },
-          { parameter: "Mass tolerance", required: "± 4.5% (≤ 10 mm)", reference: "IS 1786, Cl. 6.4" },
+          {
+            parameter: "Grade designation",
+            required: "Fe500D",
+            reference: "IS 1786, Table 1",
+          },
+          {
+            parameter: "0.2% proof stress",
+            required: "≥ 500 N/mm²",
+            reference: "IS 1608:2008",
+          },
+          {
+            parameter: "Tensile strength",
+            required: "≥ 565 N/mm²",
+            reference: "IS 1608:2008",
+          },
+          {
+            parameter: "Elongation A5",
+            required: "≥ 14.5%",
+            reference: "IS 1786, Table 3",
+          },
+          {
+            parameter: "Sulphur / Phosphorus",
+            required: "≤ 0.040% each",
+            reference: "IS 228:1993",
+          },
+          {
+            parameter: "Carbon equivalent",
+            required: "≤ 0.42%",
+            reference: "Amd 4, Nov 2023",
+          },
+          {
+            parameter: "Bend / re-bend",
+            required: "Mandrel 3d / 7d",
+            reference: "IS 1599:1985",
+          },
+          {
+            parameter: "Mass tolerance",
+            required: "± 4.5% (≤ 10 mm)",
+            reference: "IS 1786, Cl. 6.4",
+          },
         ],
       },
       {
         id: "refs",
         heading: "Normative References",
-        body: [{ text: "These standards form the compliance chain and must be cited verbatim in the tender schedule." }],
+        body: [
+          {
+            text: "These standards form the compliance chain and must be cited verbatim in the tender schedule.",
+          },
+        ],
         chips: [
           { label: "IS 456:2000", kind: "code" },
           { label: "IS 1608:2008", kind: "test" },
@@ -64,18 +102,46 @@ function steelReport(id: string): AuditReport {
       {
         id: "cert",
         heading: "Certification Requirements",
-        body: [{ text: "Conformity obligations flow from the Steel & Steel Products (Quality Control) Order, 2024. The following conditions apply to award and dispatch." }],
+        body: [
+          {
+            text: "Conformity obligations flow from the Steel & Steel Products (Quality Control) Order, 2024. The following conditions apply to award and dispatch.",
+          },
+        ],
         requirements: [
-          { label: "BIS licence (ISI mark)", detail: "Manufacturer shall hold a valid licence covering Fe500D on Schedule II; licence number quoted in offer.", mandatory: true },
-          { label: "Marking", detail: "ISI mark with grade embossed at least once every metre along the bar length.", mandatory: true },
-          { label: "Manufacturer's test certificate", detail: "Lot-wise MTC covering chemical (ladle) and mechanical results, NABL-accredited lab for recheck.", mandatory: true },
-          { label: "Third-party inspection", detail: "Pre-dispatch inspection by RITES/TPI agency of purchaser's choice at 1 lot per 50 MT.", mandatory: false },
+          {
+            label: "BIS licence (ISI mark)",
+            detail:
+              "Manufacturer shall hold a valid licence covering Fe500D on Schedule II; licence number quoted in offer.",
+            mandatory: true,
+          },
+          {
+            label: "Marking",
+            detail:
+              "ISI mark with grade embossed at least once every metre along the bar length.",
+            mandatory: true,
+          },
+          {
+            label: "Manufacturer's test certificate",
+            detail:
+              "Lot-wise MTC covering chemical (ladle) and mechanical results, NABL-accredited lab for recheck.",
+            mandatory: true,
+          },
+          {
+            label: "Third-party inspection",
+            detail:
+              "Pre-dispatch inspection by RITES/TPI agency of purchaser's choice at 1 lot per 50 MT.",
+            mandatory: false,
+          },
         ],
       },
       {
         id: "gaps",
         heading: "Identified Gaps",
-        body: [{ text: "Clauses below were absent or under-specified in the input tender documents. Suggested language is drafted for direct insertion." }],
+        body: [
+          {
+            text: "Clauses below were absent or under-specified in the input tender documents. Suggested language is drafted for direct insertion.",
+          },
+        ],
         gaps: gapsFor("steel"),
       },
     ],
@@ -106,22 +172,62 @@ function cementReport(id: string): AuditReport {
       {
         id: "specs",
         heading: "Recommended Specifications",
-        body: [{ text: "Parameter set derived from IS 8112:2013 (Third Revision, incl. Amd 4) with durability overlay from IS 456:2000." }],
+        body: [
+          {
+            text: "Parameter set derived from IS 8112:2013 (Third Revision, incl. Amd 4) with durability overlay from IS 456:2000.",
+          },
+        ],
         specRows: [
-          { parameter: "Grade designation", required: "OPC 43", reference: "IS 8112, Cl. 4" },
-          { parameter: "28-day mortar strength", required: "≥ 43 MPa", reference: "IS 4031-6:1988" },
-          { parameter: "Blaine fineness", required: "≥ 225 m²/kg", reference: "IS 4031-2:1988" },
-          { parameter: "Initial setting time", required: "≥ 30 min", reference: "IS 4031-5:1988" },
-          { parameter: "Soundness (Le Chatelier)", required: "≤ 10 mm", reference: "IS 4031-3:1988" },
-          { parameter: "Loss on ignition", required: "≤ 4.5%", reference: "Amd 4, Aug 2021" },
-          { parameter: "Chloride ion", required: "≤ 0.1%", reference: "Amd 3, Mar 2018" },
-          { parameter: "Freshness", required: "≤ 90 days from grinding", reference: "Recommended" },
+          {
+            parameter: "Grade designation",
+            required: "OPC 43",
+            reference: "IS 8112, Cl. 4",
+          },
+          {
+            parameter: "28-day mortar strength",
+            required: "≥ 43 MPa",
+            reference: "IS 4031-6:1988",
+          },
+          {
+            parameter: "Blaine fineness",
+            required: "≥ 225 m²/kg",
+            reference: "IS 4031-2:1988",
+          },
+          {
+            parameter: "Initial setting time",
+            required: "≥ 30 min",
+            reference: "IS 4031-5:1988",
+          },
+          {
+            parameter: "Soundness (Le Chatelier)",
+            required: "≤ 10 mm",
+            reference: "IS 4031-3:1988",
+          },
+          {
+            parameter: "Loss on ignition",
+            required: "≤ 4.5%",
+            reference: "Amd 4, Aug 2021",
+          },
+          {
+            parameter: "Chloride ion",
+            required: "≤ 0.1%",
+            reference: "Amd 3, Mar 2018",
+          },
+          {
+            parameter: "Freshness",
+            required: "≤ 90 days from grinding",
+            reference: "Recommended",
+          },
         ],
       },
       {
         id: "refs",
         heading: "Normative References",
-        body: [{ text: "Chain of standards to be cited alongside the primary specification." }],
+        body: [
+          {
+            text: "Chain of standards to be cited alongside the primary specification.",
+          },
+        ],
         chips: [
           { label: "IS 4031-1:1996", kind: "test" },
           { label: "IS 4031-6:1988", kind: "test" },
@@ -135,18 +241,46 @@ function cementReport(id: string): AuditReport {
       {
         id: "cert",
         heading: "Certification Requirements",
-        body: [{ text: "Cement (Quality Control) Order, 2023 obligations apply to all grades in Schedule I." }],
+        body: [
+          {
+            text: "Cement (Quality Control) Order, 2023 obligations apply to all grades in Schedule I.",
+          },
+        ],
         requirements: [
-          { label: "BIS licence (ISI mark)", detail: "Valid licence under Cement QCO 2023 with IS 8112 scope; licence number printed on every bag.", mandatory: true },
-          { label: "Bag marking", detail: "50 kg bags marked with grade, batch, date of grinding and licence number.", mandatory: true },
-          { label: "Manufacturer's test certificate", detail: "Weekly composite MTC with IS 4032 chemical traceability attached to each consignment.", mandatory: true },
-          { label: "Third-party sampling", detail: "Random sampling by purchaser at 1 sample per 1,000 bags for independent verification.", mandatory: false },
+          {
+            label: "BIS licence (ISI mark)",
+            detail:
+              "Valid licence under Cement QCO 2023 with IS 8112 scope; licence number printed on every bag.",
+            mandatory: true,
+          },
+          {
+            label: "Bag marking",
+            detail:
+              "50 kg bags marked with grade, batch, date of grinding and licence number.",
+            mandatory: true,
+          },
+          {
+            label: "Manufacturer's test certificate",
+            detail:
+              "Weekly composite MTC with IS 4032 chemical traceability attached to each consignment.",
+            mandatory: true,
+          },
+          {
+            label: "Third-party sampling",
+            detail:
+              "Random sampling by purchaser at 1 sample per 1,000 bags for independent verification.",
+            mandatory: false,
+          },
         ],
       },
       {
         id: "gaps",
         heading: "Identified Gaps",
-        body: [{ text: "Under-specified clauses detected against the standard chain. Insert suggested language to close the audit." }],
+        body: [
+          {
+            text: "Under-specified clauses detected against the standard chain. Insert suggested language to close the audit.",
+          },
+        ],
         gaps: gapsFor("cement"),
       },
     ],
@@ -177,22 +311,62 @@ function cableReport(id: string): AuditReport {
       {
         id: "specs",
         heading: "Recommended Specifications",
-        body: [{ text: "Parameter set derived from IS 1554-1:1988 (Second Revision, incl. Amd 2) with test regime per IS 10810 series." }],
+        body: [
+          {
+            text: "Parameter set derived from IS 1554-1:1988 (Second Revision, incl. Amd 2) with test regime per IS 10810 series.",
+          },
+        ],
         specRows: [
-          { parameter: "Rated voltage", required: "1,100 V", reference: "IS 1554-1, Cl. 3" },
-          { parameter: "Conductor class", required: "Al, H2/H4", reference: "IS 8130:1984" },
-          { parameter: "Insulation", required: "PVC Type A / FRLS", reference: "IS 5831:1984" },
-          { parameter: "HV withstand", required: "3 kV / 4 min", reference: "IS 10810-12" },
-          { parameter: "IR at 70°C", required: "≥ 0.0037 MΩ·km", reference: "IS 10810-13" },
-          { parameter: "Oxygen index (FRLS)", required: "≥ 29%", reference: "Amd 2, Jan 2010" },
-          { parameter: "Bending radius", required: "≥ 12 × D", reference: "IS 1255:1983" },
-          { parameter: "Armour", required: "GI wire / Al for 1-core", reference: "IS 1554-1, Cl. 4" },
+          {
+            parameter: "Rated voltage",
+            required: "1,100 V",
+            reference: "IS 1554-1, Cl. 3",
+          },
+          {
+            parameter: "Conductor class",
+            required: "Al, H2/H4",
+            reference: "IS 8130:1984",
+          },
+          {
+            parameter: "Insulation",
+            required: "PVC Type A / FRLS",
+            reference: "IS 5831:1984",
+          },
+          {
+            parameter: "HV withstand",
+            required: "3 kV / 4 min",
+            reference: "IS 10810-12",
+          },
+          {
+            parameter: "IR at 70°C",
+            required: "≥ 0.0037 MΩ·km",
+            reference: "IS 10810-13",
+          },
+          {
+            parameter: "Oxygen index (FRLS)",
+            required: "≥ 29%",
+            reference: "Amd 2, Jan 2010",
+          },
+          {
+            parameter: "Bending radius",
+            required: "≥ 12 × D",
+            reference: "IS 1255:1983",
+          },
+          {
+            parameter: "Armour",
+            required: "GI wire / Al for 1-core",
+            reference: "IS 1554-1, Cl. 4",
+          },
         ],
       },
       {
         id: "refs",
         heading: "Normative References",
-        body: [{ text: "Companion standards covering compounds, installation and accessories." }],
+        body: [
+          {
+            text: "Companion standards covering compounds, installation and accessories.",
+          },
+        ],
         chips: [
           { label: "IS 10810-1:1984", kind: "test" },
           { label: "IS 5831:1984", kind: "test" },
@@ -206,18 +380,46 @@ function cableReport(id: string): AuditReport {
       {
         id: "cert",
         heading: "Certification Requirements",
-        body: [{ text: "Electric Cables (Quality Control) Order, 2024 requires licensed manufacture for all covered LT cables." }],
+        body: [
+          {
+            text: "Electric Cables (Quality Control) Order, 2024 requires licensed manufacture for all covered LT cables.",
+          },
+        ],
         requirements: [
-          { label: "BIS licence (ISI mark)", detail: "Valid licence under Cable QCO 2024 for 1.1 kV grade; ISI mark stencilled on drum.", mandatory: true },
-          { label: "Drum marking", detail: "IS number, licence number, voltage grade, length, batch and date of manufacture on every drum.", mandatory: true },
-          { label: "Routine test certificates", detail: "Per-drum HV and IR test results attached; not substitutable by type tests.", mandatory: true },
-          { label: "Sample dissection", detail: "Purchaser may dissect 1 drum per consignment for dimensional verification.", mandatory: false },
+          {
+            label: "BIS licence (ISI mark)",
+            detail:
+              "Valid licence under Cable QCO 2024 for 1.1 kV grade; ISI mark stencilled on drum.",
+            mandatory: true,
+          },
+          {
+            label: "Drum marking",
+            detail:
+              "IS number, licence number, voltage grade, length, batch and date of manufacture on every drum.",
+            mandatory: true,
+          },
+          {
+            label: "Routine test certificates",
+            detail:
+              "Per-drum HV and IR test results attached; not substitutable by type tests.",
+            mandatory: true,
+          },
+          {
+            label: "Sample dissection",
+            detail:
+              "Purchaser may dissect 1 drum per consignment for dimensional verification.",
+            mandatory: false,
+          },
         ],
       },
       {
         id: "gaps",
         heading: "Identified Gaps",
-        body: [{ text: "Critical gaps below carry consignment rejection risk. Suggested language drafted for direct insertion." }],
+        body: [
+          {
+            text: "Critical gaps below carry consignment rejection risk. Suggested language drafted for direct insertion.",
+          },
+        ],
         gaps: gapsFor("cables"),
       },
     ],

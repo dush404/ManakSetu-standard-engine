@@ -3,9 +3,22 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Network, Search, Bell, ChevronDown, Circle, LogOut, Settings, User } from "lucide-react";
+import {
+  Network,
+  Search,
+  Bell,
+  ChevronDown,
+  Circle,
+  LogOut,
+  Settings,
+  User,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -28,11 +41,19 @@ export function TopBar() {
   return (
     <header className="sticky top-0 z-30 flex h-14 items-center gap-3 border-b border-border bg-white px-4 md:px-6">
       {/* Mobile logo */}
-      <Link href="/" className="flex items-center gap-2 md:hidden" aria-label="BIS-Graph home">
+      <Link
+        href="/"
+        className="flex items-center gap-2 md:hidden"
+        aria-label="MANAKSETU home"
+      >
         <span className="flex h-7 w-7 items-center justify-center rounded bg-primary">
-          <Network className="h-4 w-4 text-primary-foreground" strokeWidth={1.5} aria-hidden />
+          <Network
+            className="h-4 w-4 text-primary-foreground"
+            strokeWidth={1.5}
+            aria-hidden
+          />
         </span>
-        <span className="text-sm font-semibold tracking-tight">BIS-Graph</span>
+        <span className="text-sm font-semibold tracking-tight">MANAKSETU</span>
       </Link>
 
       <h1 className="hidden text-sm font-semibold tracking-tight text-foreground md:block">
@@ -47,7 +68,9 @@ export function TopBar() {
         className="transition-fast ml-auto flex h-8 w-8 items-center justify-center rounded border border-border bg-background text-muted-foreground hover:bg-secondary md:ml-6 md:h-9 md:w-72 md:justify-start md:gap-2 md:px-3"
       >
         <Search className="h-4 w-4 shrink-0" strokeWidth={1.5} aria-hidden />
-        <span className="hidden text-[13px] md:inline">Search standards, tenders…</span>
+        <span className="hidden text-[13px] md:inline">
+          Search standards, tenders…
+        </span>
         <kbd className="ml-auto hidden rounded border border-border bg-secondary px-1.5 py-0.5 font-mono text-[10px] text-muted-foreground md:inline-block">
           ⌘K
         </kbd>
@@ -72,12 +95,19 @@ export function TopBar() {
               )}
             </Button>
           </PopoverTrigger>
-          <PopoverContent align="end" className="w-80 max-w-[calc(100vw-2rem)] rounded p-0">
+          <PopoverContent
+            align="end"
+            className="w-80 max-w-[calc(100vw-2rem)] rounded p-0"
+          >
             <div className="flex items-center justify-between border-b border-border px-3 py-2">
-              <p className="text-xs font-semibold text-foreground">Notifications</p>
+              <p className="text-xs font-semibold text-foreground">
+                Notifications
+              </p>
               <button
                 type="button"
-                onClick={() => setNotifs((ns) => ns.map((n) => ({ ...n, unread: false })))}
+                onClick={() =>
+                  setNotifs((ns) => ns.map((n) => ({ ...n, unread: false })))
+                }
                 className="transition-fast text-[11px] font-medium text-primary hover:underline"
               >
                 Mark all read
@@ -92,13 +122,19 @@ export function TopBar() {
                   <Circle
                     className={cn(
                       "mt-1 h-1.5 w-1.5 shrink-0",
-                      n.unread ? "fill-primary text-primary" : "fill-gray-300 text-gray-300",
+                      n.unread
+                        ? "fill-primary text-primary"
+                        : "fill-gray-300 text-gray-300",
                     )}
                     aria-hidden
                   />
                   <div className="min-w-0">
-                    <p className="text-xs font-medium text-foreground">{n.title}</p>
-                    <p className="mt-0.5 text-[11px] leading-4 text-muted-foreground">{n.body}</p>
+                    <p className="text-xs font-medium text-foreground">
+                      {n.title}
+                    </p>
+                    <p className="mt-0.5 text-[11px] leading-4 text-muted-foreground">
+                      {n.body}
+                    </p>
                   </div>
                   <span className="ml-auto shrink-0 text-[10px] text-muted-foreground tabular-nums">
                     {n.date}
@@ -120,29 +156,49 @@ export function TopBar() {
               <span className="flex h-6 w-6 items-center justify-center rounded bg-accent text-[10px] font-semibold text-accent-foreground">
                 RS
               </span>
-              <span className="hidden text-xs font-medium lg:inline">R. Sharma</span>
-              <ChevronDown className="h-3.5 w-3.5 text-muted-foreground" strokeWidth={1.5} aria-hidden />
+              <span className="hidden text-xs font-medium lg:inline">
+                R. Sharma
+              </span>
+              <ChevronDown
+                className="h-3.5 w-3.5 text-muted-foreground"
+                strokeWidth={1.5}
+                aria-hidden
+              />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="w-56 rounded">
             <DropdownMenuLabel>
-              <p className="text-xs font-semibold text-foreground">Ramesh Sharma</p>
+              <p className="text-xs font-semibold text-foreground">
+                Ramesh Sharma
+              </p>
               <p className="text-[11px] font-normal text-muted-foreground">
                 r.sharma@ndmc.gov.in
               </p>
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuItem className="text-xs">
-              <User className="mr-2 h-3.5 w-3.5" strokeWidth={1.5} aria-hidden />
+              <User
+                className="mr-2 h-3.5 w-3.5"
+                strokeWidth={1.5}
+                aria-hidden
+              />
               Profile
             </DropdownMenuItem>
             <DropdownMenuItem className="text-xs">
-              <Settings className="mr-2 h-3.5 w-3.5" strokeWidth={1.5} aria-hidden />
+              <Settings
+                className="mr-2 h-3.5 w-3.5"
+                strokeWidth={1.5}
+                aria-hidden
+              />
               Preferences
             </DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem className="text-xs">
-              <LogOut className="mr-2 h-3.5 w-3.5" strokeWidth={1.5} aria-hidden />
+              <LogOut
+                className="mr-2 h-3.5 w-3.5"
+                strokeWidth={1.5}
+                aria-hidden
+              />
               Sign out
             </DropdownMenuItem>
           </DropdownMenuContent>

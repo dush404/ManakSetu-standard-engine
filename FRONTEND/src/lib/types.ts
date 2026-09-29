@@ -1,5 +1,5 @@
 // ─────────────────────────────────────────────────────────────
-// BIS-Graph — shared type definitions
+// MANAKSETU — shared type definitions
 // ─────────────────────────────────────────────────────────────
 
 export type RiskLevel = "Low" | "Medium" | "High";

@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "BIS-Graph — Indian Standards Intelligence",
+  title: "MANAKSETU — Indian Standards Intelligence",
   description:
     "AI-powered Indian Standards recommendation engine for government procurement. Graph-traverse specifications, audit tenders, and track QCO amendments.",
 };

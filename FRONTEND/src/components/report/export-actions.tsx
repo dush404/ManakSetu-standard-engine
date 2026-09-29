@@ -20,8 +20,8 @@ export function ExportActions({ report }: { report: AuditReport }) {
   };
 
   const downloadDoc = () => {
-    const html = `<!DOCTYPE html><html><head><meta charset="utf-8"><title>BIS-Graph Audit ${report.id}</title></head><body style="font-family:Arial,sans-serif;max-width:800px;margin:24px auto;">
-<h2>BIS-Graph Audit Report — ${report.id}</h2>
+    const html = `<!DOCTYPE html><html><head><meta charset="utf-8"><title>MANAKSETU Audit ${report.id}</title></head><body style="font-family:Arial,sans-serif;max-width:800px;margin:24px auto;">
+<h2>MANAKSETU Audit Report — ${report.id}</h2>
 <p><strong>Product:</strong> ${report.product}<br/><strong>Agency:</strong> ${report.agency}<br/><strong>Date:</strong> ${report.date}<br/><strong>Compliance Score:</strong> ${report.score}/100</p>
 <h3>Tender Clauses</h3>
 <pre style="white-space:pre-wrap;font-family:Consolas,monospace;font-size:12px;">${report.tenderClauses}</pre>
@@ -30,7 +30,7 @@ export function ExportActions({ report }: { report: AuditReport }) {
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = `BIS-Graph_Audit_${report.id}.doc`;
+    a.download = `MANAKSETU_Audit_${report.id}.doc`;
     a.click();
     URL.revokeObjectURL(url);
     setExported(true);
@@ -44,28 +44,52 @@ export function ExportActions({ report }: { report: AuditReport }) {
         {report.id} · Generated {report.date} · Print-friendly
       </p>
       <div className="flex flex-wrap items-center justify-end gap-2">
-        <Button variant="ghost" onClick={downloadDoc} className="rounded text-xs">
+        <Button
+          variant="ghost"
+          onClick={downloadDoc}
+          className="rounded text-xs"
+        >
           {exported ? (
             <>
-              <Check className="mr-1.5 h-3.5 w-3.5 text-emerald-600" strokeWidth={1.5} aria-hidden />
+              <Check
+                className="mr-1.5 h-3.5 w-3.5 text-emerald-600"
+                strokeWidth={1.5}
+                aria-hidden
+              />
               Exported to downloads
             </>
           ) : (
             <>
-              <Download className="mr-1.5 h-3.5 w-3.5" strokeWidth={1.5} aria-hidden />
+              <Download
+                className="mr-1.5 h-3.5 w-3.5"
+                strokeWidth={1.5}
+                aria-hidden
+              />
               Download DOCX
             </>
           )}
         </Button>
-        <Button variant="ghost" onClick={copyClauses} className="rounded text-xs">
+        <Button
+          variant="ghost"
+          onClick={copyClauses}
+          className="rounded text-xs"
+        >
           {copied ? (
             <>
-              <Check className="mr-1.5 h-3.5 w-3.5 text-emerald-600" strokeWidth={1.5} aria-hidden />
+              <Check
+                className="mr-1.5 h-3.5 w-3.5 text-emerald-600"
+                strokeWidth={1.5}
+                aria-hidden
+              />
               Copied as tender clause
             </>
           ) : (
             <>
-              <Copy className="mr-1.5 h-3.5 w-3.5" strokeWidth={1.5} aria-hidden />
+              <Copy
+                className="mr-1.5 h-3.5 w-3.5"
+                strokeWidth={1.5}
+                aria-hidden
+              />
               Copy as Tender Clause
             </>
           )}

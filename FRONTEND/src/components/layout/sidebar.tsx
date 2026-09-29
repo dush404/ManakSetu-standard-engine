@@ -17,10 +17,16 @@ export function Sidebar() {
       {/* Logo */}
       <div className="flex h-14 items-center gap-2.5 border-b border-border px-4">
         <span className="flex h-7 w-7 items-center justify-center rounded bg-primary">
-          <Network className="h-4 w-4 text-primary-foreground" strokeWidth={1.5} aria-hidden />
+          <Network
+            className="h-4 w-4 text-primary-foreground"
+            strokeWidth={1.5}
+            aria-hidden
+          />
         </span>
         <div className="leading-tight">
-          <p className="text-sm font-semibold tracking-tight text-foreground">BIS-Graph</p>
+          <p className="text-sm font-semibold tracking-tight text-foreground">
+            MANAKSETU
+          </p>
           <p className="text-[10px] font-medium uppercase tracking-widest text-muted-foreground">
             Standards Intelligence
           </p>
@@ -28,7 +34,10 @@ export function Sidebar() {
       </div>
 
       {/* Nav */}
-      <nav className="flex-1 space-y-0.5 overflow-y-auto p-3 thin-scroll" aria-label="Workspace">
+      <nav
+        className="flex-1 space-y-0.5 overflow-y-auto p-3 thin-scroll"
+        aria-label="Workspace"
+      >
         <p className="px-2 pb-1.5 pt-1 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
           Workspace
         </p>
@@ -63,10 +72,15 @@ export function Sidebar() {
         <div className="rounded border border-border bg-background p-2.5">
           <div className="flex items-center justify-between">
             <span className="flex items-center gap-1.5 text-[11px] font-medium text-foreground">
-              <Circle className="h-1.5 w-1.5 fill-emerald-500 text-emerald-500" aria-hidden />
+              <Circle
+                className="h-1.5 w-1.5 fill-emerald-500 text-emerald-500"
+                aria-hidden
+              />
               QCO Sync: Live
             </span>
-            <span className="font-mono text-[10px] text-muted-foreground tabular-nums">v2.4.1</span>
+            <span className="font-mono text-[10px] text-muted-foreground tabular-nums">
+              v2.4.1
+            </span>
           </div>
           <p className="mt-1 text-[10px] text-muted-foreground tabular-nums">
             Last sync 04:30 IST · 24,318 records

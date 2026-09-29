@@ -1,4 +1,10 @@
-import { LayoutDashboard, Table2, Workflow, ClipboardCheck, type LucideIcon } from "lucide-react";
+import {
+  LayoutDashboard,
+  Table2,
+  Workflow,
+  ClipboardCheck,
+  type LucideIcon,
+} from "lucide-react";
 
 export const NAV_ITEMS: {
   href: string;
@@ -42,5 +48,5 @@ export function pageTitle(path: string): string {
   if (path.startsWith("/recommend")) return "Recommendation Engine";
   if (path.startsWith("/standards")) return "Standard Explorer";
   if (path.startsWith("/report")) return "Audit Report";
-  return "BIS-Graph";
+  return "MANAKSETU";
 }
